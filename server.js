@@ -11,7 +11,7 @@ const getApi =require('./controllers/getApi.controller')
 const {
     createFavorite,getFavorite,deleteFavorite,updateFavorite
 }=require('./controllers/crud.controller')
-mongoose.connect(`mongodb://localhost:27017/grocerydb`, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
+mongoose.connect(`${process.env.MONGO_ATLAS_URL}`, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
 
 // a server endpoint 
 app.get('/',(req,res)=>res.send('proof of live'))

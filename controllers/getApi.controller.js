@@ -1,8 +1,9 @@
 const axios = require('axios');
+require('dotenv').config();
 
 
 const getApi=(req,res)=>{
-    axios.get(`https://digimon-api.vercel.app/api/digimon`).then(response=>{
+    axios.get(`${process.env.API_URL}`).then(response=>{
         res.send(response.data)
     }).catch(error=>console.log(error.message))
 }
